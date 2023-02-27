@@ -1,4 +1,11 @@
-# porting process:
+ [porting process](#porting)
+ 
+  [problem](#problem)
+  
+   [device info](#deviceinfo)
+ 
+
+# porting
 ```
 git clone https://gitlab.com/ubports/porting/reference-device-ports/android11/fairphone-4/fairphone-fp4.git
 edit deviceinfo and dtb dtbo.img
@@ -13,7 +20,7 @@ finally boot
 ```
 
 
-# problem detail
+# problem
 ```
 usbnet works,can use ssh droidian@10.15.19.82 to login
 wifi not work
@@ -47,7 +54,7 @@ cat: '/var/lib/lxc/android/rootfs/ueventd*.rc': No such file or directory,
 so cant regenerate udev rules
 ```
 
-# device info
+# deviceinfo
 ```
 Device	Lenovo Xiaoxin Pad Plus
 SoC	Qualcomm SM7225 Snapdragon 750G 5G
