@@ -1,5 +1,6 @@
 usbnet works,can use ssh droidian@10.15.19.82 to login
-wifi not work,screen black after boot,boot,show debian logo,then black screen
+wifi not work
+screen black after boot,boot,show debian logo,then black screen
 
 lxc-ls --fancy
 NAME    STATE   AUTOSTART GROUPS IPV4                  IPV6 UNPRIVILEGED 
@@ -25,7 +26,8 @@ systemctl status phosh
 
 DEVICE=arnoz
 cat /var/lib/lxc/android/rootfs/ueventd*.rc /vendor/ueventd*.rc | grep ^/dev | sed -e 's/^\/dev\///' | awk '{printf "ACTION==\"add\", KERNEL==\"%s\", OWNER=\"%s\", GROUP=\"%s\", MODE=\"%s\"\n",$1,$3,$4,$2}' | sed -e 's/\r//' >/etc/udev/rules.d/70-$DEVICE.rules
-cat: '/var/lib/lxc/android/rootfs/ueventd*.rc': No such file or directory
+cat: '/var/lib/lxc/android/rootfs/ueventd*.rc': No such file or directory,
+so cant regenerate udev rules
 
 
 
