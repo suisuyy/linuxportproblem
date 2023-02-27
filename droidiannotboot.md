@@ -1,4 +1,5 @@
 # porting process:
+```
 git clone https://gitlab.com/ubports/porting/reference-device-ports/android11/fairphone-4/fairphone-fp4.git
 edit deviceinfo and dtb dtbo.img
 then run
@@ -9,9 +10,11 @@ get droidian from
 https://github.com/droidian-images/droidian/releases/download/nightly/droidian-OFFICIAL-phosh-phone-rootfs-api30-arm64-nightly_20230227.zip
 then flash it via twrp
 finally boot
+```
 
 
 # problem detail
+```
 usbnet works,can use ssh droidian@10.15.19.82 to login
 wifi not work
 screen black after boot,boot,show debian logo,then black screen
@@ -42,9 +45,10 @@ DEVICE=arnoz
 cat /var/lib/lxc/android/rootfs/ueventd*.rc /vendor/ueventd*.rc | grep ^/dev | sed -e 's/^\/dev\///' | awk '{printf "ACTION==\"add\", KERNEL==\"%s\", OWNER=\"%s\", GROUP=\"%s\", MODE=\"%s\"\n",$1,$3,$4,$2}' | sed -e 's/\r//' >/etc/udev/rules.d/70-$DEVICE.rules
 cat: '/var/lib/lxc/android/rootfs/ueventd*.rc': No such file or directory,
 so cant regenerate udev rules
-
+```
 
 # device info
+```
 Device	Lenovo Xiaoxin Pad Plus
 SoC	Qualcomm SM7225 Snapdragon 750G 5G
 CPU	2x2.2 GHz Kryo 570 & 6x1.8 GHz Kryo 570
@@ -60,7 +64,7 @@ Front camera	13 MP
 kernel 4.19.157
 
 
-
+```
 
 
 
