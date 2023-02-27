@@ -53,6 +53,8 @@ cat /var/lib/lxc/android/rootfs/ueventd*.rc /vendor/ueventd*.rc | grep ^/dev | s
 cat: '/var/lib/lxc/android/rootfs/ueventd*.rc': No such file or directory,
 so cant regenerate udev rules
 ```
+dmesg log: 
+https://github.com/suisuyy/linuxportproblem/blob/main/logdmesg
 
 # deviceinfo
 ```
